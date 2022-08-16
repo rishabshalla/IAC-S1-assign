@@ -11,7 +11,7 @@ resource "aws_instance" "rishab-ec2" {
 
 resource "aws_ebs_volume" "rishab-volume" {
   count             = var.condition ? 1 : 0
-  availability_zone = "ap-south-1a"
+  availability_zone = "us-east-1c"
   size              = var.ebs_size
 
   tags = {
