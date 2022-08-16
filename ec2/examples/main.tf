@@ -2,7 +2,7 @@ module "my-aws-ec2" {
   source        = "../"
   ami_type      = "ami-090fa75af13c156b4"
   instance_type = "t2.micro"
-  ebs_size      = 40
+  ebs_size      = 4
 
 }
 
