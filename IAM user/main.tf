@@ -3,7 +3,9 @@
 resource "aws_iam_group_membership" "rishab-test-membership" {
   name = "rishab-membership"
 
-  users = var.username # users name
+  # users = var.username   # users name
+  users = [for i in aws_iam_user.rishab-users : i.name]
+
 
   group = aws_iam_group.rishab-group.name # group name
 }
