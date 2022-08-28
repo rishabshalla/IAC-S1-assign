@@ -10,6 +10,6 @@ output "module-ec2-instances" {
 output "module-s3-bucket" {
   value = module.my-aws-s3.s3-bucket
 }
-output "module-dynamoDB" {
-  value = module.my-aws-dynamoDB.dynamoDB_tables
-}
+# output "module-dynamoDB" {
+#   value = module.my-aws-dynamoDB.dynamoDB_tables
+# }
