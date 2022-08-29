@@ -19,7 +19,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  Automate_terraform:
+  automate_terraform:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,10 +32,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # - name: Checkout
       - uses: actions/checkout@v3
 
       - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v2
       
       - name: Terraform init
         id: init
@@ -64,7 +65,7 @@ jobs:
         run: terraform apply -auto-approve
         working-directory: ${{env.dir}}
 
-      - name: Terraform destroy
-        id: destroy
-        run: terraform destroy -auto-approve
-        working-directory: ${{env.dir}}
+      # - name: Terraform destroy
+      #   id: destroy
+      #   run: terraform destroy -auto-approve
+      #   working-directory: ${{env.dir}}
